@@ -5,42 +5,19 @@
     <meta charset="utf-8">
     <title>my proyect</title>
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="main.js"></script>
+    
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="header">Draggable Div</header>
+    <div class="wrapper" id = "wrapper">
+        <header class="header" id = "header">Draggable Div</header>
         <div class="content">
             <div class="title">Draggable Div</div>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of</p>
         </div>
     </div>
-    <script>
-        const wrapper = document.querySelector(".wrapper")
-        let header = document.querySelector("header")
-
-
-        function onDrag({movementX, movementY}) {
-            let getStyle = window.getComputedStyle(wrapper)
-            let left = parseInt(getStyle.left);
-            let top = parseInt(getStyle.top);
-            console.log(typeof left, typeof top)
-            wrapper.style.left = `${left + movementX}px`
-            wrapper.style.top = `${top + movementY}px`
-
-        }
-
-        header.addEventListener("mousedown", function () {
-            header.addEventListener("mousemove", onDrag)
-
-        })
-        document.addEventListener("mouseup", function () {
-            header.removeEventListener("mousemove", onDrag)
-
-        })
-    </script>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
