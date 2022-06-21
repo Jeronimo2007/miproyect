@@ -1,47 +1,65 @@
-'use strict'
+let addToDoButton = document.getElementById('addToDo');
+let toDoContainer = document.getElementById('toDoContainer');
+let inputField = document.getElementById('inputField');
+
+addToDoButton.addEventListener('click', function () {
+    var paragraph = document.createElement('p');
+    paragraph.classList.add('paragraph-styling');
+    paragraph.innerText = inputField.value;
+    toDoContainer.appendChild(paragraph);
+    inputField.value = "";
+    paragraph.addEventListener('click', function () {
+        paragraph.style.textDecoration = "line-through";
+    })
+    paragraph.addEventListener('dblclick', function () {
+        toDoContainer.removeChild(paragraph);
+    })
+})
 
 
-const input = document.querySelector("input");
-const addBtn = document.querySelector(".btn-add");
-const ul = document.querySelector("ul");
-const empty = document.querySelector(".empty");
 
-addBtn.addEventListener("click", (e) => {
-  e.preventDefault();
 
-  const text = input.value;
+dragElement(document.getElementById('wrapper'));
 
-  if (text !== "") {
-    const li = document.createElement("li");
-    const p = document.createElement("p");
-    p.textContent = text;
-
-    li.appendChild(p);
-    li.appendChild(addDeleteBtn());
-    ul.appendChild(li);
-
-    input.value = "";
-    empty.style.display = "none";
-  }
-});
-
-function addDeleteBtn() {
-  const deleteBtn = document.createElement("button");
-
-  deleteBtn.textContent = "X";
-  deleteBtn.className = "btn-delete";
-
-  deleteBtn.addEventListener("click", (e) => {
-    const item = e.target.parentElement;
-    ul.removeChild(item);
-
-    const items = document.querySelectorAll("li");
-
-    if (items.length === 0) {
-      empty.style.display = "block";
+function dragElement(elmnt) {
+    var main = document.querySelector(".mainDiv")
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        
+    } else {
+        elmnt.onmousedown = dragMouseDown;
     }
-  });
 
-  return deleteBtn;
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        main.style.top = (main.offsetTop - pos2) + "px";
+        main.style.left = (main.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        // stop moving when mouse button is released:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
 }
+
 
