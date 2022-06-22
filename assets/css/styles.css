@@ -6,11 +6,11 @@
 }
 
 body{
-    background: #6f36ff;
+    background-image: url("../img/background1.jpg");
 }
 
 .mainDiv{
-    background: white;
+    background: #cccc;
     width: 300px;
     top: 50%;
     position: absolute;
@@ -20,7 +20,7 @@ body{
 }
 
 .wrapper{
-    background: white;
+    background:#ccc;
     width: 300px;
     top: 0%;
     position: absolute;
@@ -29,12 +29,11 @@ body{
     transform: translate(-50%,-50%);
 }
 
-.wrapper header{
+.mainDiv header{
     color: #6f36ff;
     font-size: 23px;
     font-weight: 500;
-    padding: 17px 30px;
-    border-bottom: 1px solid #bfbfbf;
+    padding: 17px 60px;
 }
 
 .content{
@@ -43,12 +42,15 @@ body{
 
 /*to do list*/
 #inputField{
-  margin: 10px;
+    border-radius: 6px;
+    margin: 10px;
+    width: 230px;
 }
 
 #addToDo{
-  color: white;
-  background:royalblue;
-  border-radius:5px;
+    margin-left: 10px;
+    width: 100px;
+    color: white;
+    background:royalblue;
+    border-radius:5px;
 }
-
