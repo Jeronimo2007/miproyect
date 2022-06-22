@@ -12,16 +12,21 @@
     <div class="mainDiv" id="mainDiv">
         <div class="content">
             <div class="wrapper" id="wrapper">
-            <header class="header" id="header">Draggable Div</header>
+                <h1 class="header" id="header"> TODO list</h1>
             </div>
-            <input id="inputField" type="text" placeholder="Add a new task and press Enter">
-            <button id="addToDo">Remove Done</button>
-            <button id="addToDo">Remove all</button>
+            <div class="inputContainer">
+                <span>
+                    <input type="checkbox" id="checkbox">
+                    <input id="inputField" type="text" placeholder="  Add a new task and press Enter!">
+                </span> 
+            </div>
+            <span>
+                <button id="addToDo">Remove Done</button>
+                <button id="addToDo">Remove all</button>
+            </span>
             <div class="to-dos" id="toDoContainer">
             </div>
-        </div
-
-    </div>
+        </div>
         <script type="text/javascript" src="assets/js/main.js"></script>
         <script type="text/javascript" src="assets/js/toDo.js"></script>
 </body>
