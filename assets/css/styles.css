@@ -45,10 +45,24 @@ body{
 }
 
 /*to do list*/
-#inputField{
+.inputField1{
     font-family: "arial";
     background-color: #ffffff;
-    color: #9bcdf4;
+    color: black;
+    outline: none;
+    border: none;
+    padding-left: 30px;
+    border-radius: 11px;
+    margin-bottom: 10px ;
+    width: 260px;
+    height: 25px;
+    display: flex;
+}
+
+.input{
+    font-family: "arial";
+    background-color: #ffffff;
+    color: black;
     outline: none;
     border: none;
     padding-left: 30px;
@@ -97,7 +111,7 @@ body{
     background-color: #577dac;
 }
 
-#checkbox{
+.checkbox{
     position: relative;
         border-radius: 10px;
         z-index: 2;

@@ -1,23 +1,44 @@
-let addToDoButton = document.getElementsByid('addToDo');
+let addToDoButton = document.querySelector('#addToDo');
 let toDoContainer = document.getElementById('toDoContainer');
 let inputField = document.getElementById('inputField');
-let checkBox = document.getElementById('checkbox')
+let checkBox = document.getElementsByClassName('checkbox')
+let removeToDoButton = document.getElementById('removeToDo')
 
-addToDoButton.addEventListener('click', function () {
-    var paragraph = document.createElement('p');
-    paragraph.classList.add('paragraph-styling');
-    paragraph.innerText = inputField.value;
-    toDoContainer.appendChild(paragraph);
-    inputField.value = "";
-    paragraph.addEventListener('click', function () {
-        paragraph.style.textDecoration = "line-through";
-    })
-    paragraph.addEventListener('dblclick', function () {
-        toDoContainer.removeChild(paragraph);
-    })
-})
+inputField.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        var paragraph = document.createElement('input');
+        paragraph.classList.add('input')
 
 
-var inputAtributtes = document.querySelector("#inputField")
+        paragraph.defaultValue = inputField.value;
 
-console.log(inputAtributtes.value)
+        toDoContainer.appendChild(paragraph);
+        inputField.value = "";
+
+        checkbox.addEventListener('click', function () {
+            paragraph.style.textDecoration = "line-through";
+
+            checkbox.addEventListener('click', function () {
+                paragraph.style.textDecoration = "initial";
+
+            
+            
+            })
+            })
+        removeToDoButton.addEventListener('click', () => {
+            toDoContainer.removeChild(paragraph);
+        })
+    }
+})                                       
+
+
+function addElement(tag, className) {
+    let element = document.createElement(tag)
+    
+    element.classList.add(className)
+
+
+
+}
+
+console.log({checkBox})
