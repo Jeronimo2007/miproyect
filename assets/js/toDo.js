@@ -1,6 +1,7 @@
-let addToDoButton = document.getElementById('addToDo');
+let addToDoButton = document.getElementsByid('addToDo');
 let toDoContainer = document.getElementById('toDoContainer');
 let inputField = document.getElementById('inputField');
+let checkBox = document.getElementById('checkbox')
 
 addToDoButton.addEventListener('click', function () {
     var paragraph = document.createElement('p');
@@ -15,3 +16,8 @@ addToDoButton.addEventListener('click', function () {
         toDoContainer.removeChild(paragraph);
     })
 })
+
+
+var inputAtributtes = document.querySelector("#inputField")
+
+console.log(inputAtributtes.value)

@@ -60,7 +60,7 @@ body{
 }
 
 
-#addToDo{
+.addToDo{
     cursor: pointer;
     opacity: none;
     font-size: 12px;
@@ -73,13 +73,27 @@ body{
     border-radius:10px;
 }
 
+.removeToDo{
+    cursor: pointer;
+    opacity: none;
+    font-size: 12px;
+    border: none;
+    margin-left: 10px;
+    width: 115px;
+    height: 35px;
+    color: white;
+    background:#004ba4 ;
+    border-radius:10px
+}
+
 ::placeholder{
-    font-family: "comic sans ms";
+    font-family: "arial";
+    font-style: italic;
     color: #acacac;
     font-size: 14px;
 }
 
-#addToDo:hover{
+.addToDo:hover{
     background-color: #577dac;
 }
 
