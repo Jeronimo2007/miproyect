@@ -3,11 +3,17 @@ let toDoContainer = document.getElementById('toDoContainer');
 let inputField = document.getElementById('inputField');
 let checkBox = document.getElementsByClassName('checkbox')
 let removeToDoButton = document.getElementById('removeToDo')
+let inputs = document.getElementsByClassName('input')
 
 inputField.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         var paragraph = document.createElement('input');
         paragraph.classList.add('input')
+
+        var buttonCheck = document.createElement('input');
+        buttonCheck.type = 'checkbox'
+        buttonCheck.classList.add('checkbox')
+        buttonCheck.classList.add('checkbox')
 
 
         paragraph.defaultValue = inputField.value;
@@ -15,21 +21,28 @@ inputField.addEventListener('keypress', function (e) {
         toDoContainer.appendChild(paragraph);
         inputField.value = "";
 
-        checkbox.addEventListener('click', function () {
-            paragraph.style.textDecoration = "line-through";
+        let check = checkBox.checked
+        
+        if (check === true) {
+            paragraph.style.textDecoration = 'line through'
 
-            checkbox.addEventListener('click', function () {
-                paragraph.style.textDecoration = "initial";
+        }else{
+            paragraph.style.textDecoration = 'initial'
 
-            
-            
-            })
-            })
+        }
+
         removeToDoButton.addEventListener('click', () => {
             toDoContainer.removeChild(paragraph);
         })
+
+        if (inputs.value == ''){
+            removeChild(paragraph,buttonCheck)
+        
+        }
+        
     }
-})                                       
+})       
+
 
 
 function addElement(tag, className) {
@@ -41,4 +54,4 @@ function addElement(tag, className) {
 
 }
 
-console.log({checkBox})
+console.log({inputField})
