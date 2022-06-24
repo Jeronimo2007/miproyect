@@ -8,7 +8,7 @@
 
 </head>
 
-<body> 
+<body>
     <div class="mainDiv" id="mainDiv">
         <div class="content">
             <div class="wrapper" id="wrapper">
@@ -17,21 +17,26 @@
             <div class="inputContainer">
                 <span>
                     <label for="inputField">
-                    <input type="checkbox" id="checkbox" class="checkbox">
-                    <input id="inputField" class="inputField1" name="inputField" type="text" placeholder="  Add a new task and press Enter!">
-                </label>
-                </span> 
+                        <input type="checkbox" id="checkbox" class="checkbox">
+                        <input id="inputField" class="inputField1" name="inputField" type="text"
+                            placeholder="  Add a new task and press Enter!">
+                    </label>
+                </span>
             </div>
             <div class="to-dos" id="toDoContainer">
                 <ul id="todos-list">
-                    <li>
-                        <input type="checkbox"  class="checkbox1">
-                    </li>
+                   <!---<li>
+                        
+                            <input type="checkbox" class="checkbox">
+                            <input type="text" class="input">
+                        
+                        
+                    </li>--> 
                 </ul>
             </div>
             <span>
-                <button class="addToDo" id="addToDo">Remove Done</button>
-                <button class="removeToDo" id="removeToDo">Remove all</button>
+                <button class="removeDone" id="removeDone">Remove Done</button>
+                <button class="removeAll" id="removeAll">Remove all</button>
             </span>
         </div>
         <script type="text/javascript" src="assets/js/main.js"></script>

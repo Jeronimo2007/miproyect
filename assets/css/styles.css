@@ -74,7 +74,7 @@ body{
 }
 
 
-.addToDo{
+.removeDone{
     cursor: pointer;
     opacity: none;
     font-size: 12px;
@@ -87,7 +87,7 @@ body{
     border-radius:10px;
 }
 
-.removeToDo{
+.removeAll{
     cursor: pointer;
     opacity: none;
     font-size: 12px;
@@ -107,7 +107,7 @@ body{
     font-size: 14px;
 }
 
-.addToDo:hover{
+.removeDone:hover{
     background-color: #577dac;
 }
 
@@ -123,4 +123,12 @@ body{
         color: white;
         background-color: #1e90ff;
     padding-left: 10px;
+}
+
+.complete{
+    text-decoration: line-through;
+}
+
+ul{
+    list-style-type: none;
 }
